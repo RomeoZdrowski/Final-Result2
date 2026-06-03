@@ -4460,13 +4460,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walls_side_top_147
+      name: walls_side_top_1471
       rect:
         serializedVersion: 2
         x: 272
-        y: 176
-        width: 16
-        height: 16
+        y: 112
+        width: 32
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9546,7 +9546,7 @@ TextureImporter:
       walls_side_top_144: 21300288
       walls_side_top_145: 21300290
       walls_side_top_146: 21300292
-      walls_side_top_147: 21300294
+      walls_side_top_1471: 21300294
       walls_side_top_148: 21300296
       walls_side_top_149: 21300298
       walls_side_top_15: 21300030
