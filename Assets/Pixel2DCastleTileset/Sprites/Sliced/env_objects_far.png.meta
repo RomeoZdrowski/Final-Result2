@@ -2066,10 +2066,10 @@ TextureImporter:
       name: env_objects_far_15
       rect:
         serializedVersion: 2
-        x: 288
-        y: 496
-        width: 16
-        height: 16
+        x: 272
+        y: 448
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3496,10 +3496,10 @@ TextureImporter:
       name: env_objects_far_80
       rect:
         serializedVersion: 2
-        x: 48
-        y: 416
-        width: 16
-        height: 16
+        x: 0
+        y: 352
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7478,10 +7478,10 @@ TextureImporter:
       name: env_objects_far_261
       rect:
         serializedVersion: 2
-        x: 288
-        y: 240
-        width: 16
-        height: 16
+        x: 272
+        y: 208
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -8446,10 +8446,10 @@ TextureImporter:
       name: env_objects_far_305
       rect:
         serializedVersion: 2
-        x: 112
+        x: 96
         y: 208
-        width: 16
-        height: 16
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9326,10 +9326,10 @@ TextureImporter:
       name: env_objects_far_345
       rect:
         serializedVersion: 2
-        x: 448
+        x: 432
         y: 192
-        width: 16
-        height: 16
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11328,10 +11328,10 @@ TextureImporter:
       name: env_objects_far_436
       rect:
         serializedVersion: 2
-        x: 368
-        y: 96
-        width: 16
-        height: 16
+        x: 352
+        y: 0
+        width: 48
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11768,10 +11768,10 @@ TextureImporter:
       name: env_objects_far_456
       rect:
         serializedVersion: 2
-        x: 416
-        y: 80
-        width: 16
-        height: 16
+        x: 400
+        y: 0
+        width: 32
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11791,9 +11791,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 80
+        y: 0
         width: 16
-        height: 16
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -11813,9 +11813,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 80
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -13067,9 +13067,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 16
-        width: 16
-        height: 16
+        y: 0
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

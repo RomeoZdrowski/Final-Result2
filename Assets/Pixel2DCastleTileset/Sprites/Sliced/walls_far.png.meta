@@ -2064,10 +2064,10 @@ TextureImporter:
       name: walls_far_13
       rect:
         serializedVersion: 2
-        x: 304
-        y: 496
-        width: 16
-        height: 16
+        x: 320
+        y: 400
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2593,9 +2593,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 480
-        width: 16
-        height: 16
+        y: 400
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
