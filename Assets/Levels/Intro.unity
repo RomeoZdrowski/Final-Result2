@@ -1228,7 +1228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soren simply concluded that if the Wardens lacked the courage to act, he
+  m_Text: Soren simply concluded that if the Wardens lacked the courage to act, she
     would act alone.
 --- !u!222 &1130102927
 CanvasRenderer:
@@ -1308,7 +1308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: He made a conclusion that the Amber Currents are not infinite.
+  m_Text: She made a conclusion that the Amber Currents are not infinite.
 --- !u!222 &1217098203
 CanvasRenderer:
   m_ObjectHideFlags: 0
