@@ -77,7 +77,10 @@ public class BossController : MonoBehaviour
         if (attackTimer >= attackCooldown)
         {
             attackTimer = 0;
-            anim.SetTrigger("attack");
+
+            Debug.Log("Boss Attack");
+
+            ShootRadial();
         }
 
         if (stateTimer >= flyDuration)
@@ -147,6 +150,8 @@ public class BossController : MonoBehaviour
     // Вызывается Animation Event из Attack
     public void ShootRadial()
     {
+        Debug.Log("=== SHOOT RADIAL START ===");
+
         int count = 8;
         float angleStep = 360f / count;
 
@@ -154,17 +159,38 @@ public class BossController : MonoBehaviour
         {
             GameObject fireball = GetFireball();
 
+            if (fireball == null)
+            {
+                Debug.LogError("Fireball is NULL!");
+                continue;
+            }
+
+            Debug.Log("Found: " + fireball.name);
+            Debug.Log("Before Active: " + fireball.activeSelf);
+
             fireball.transform.position = firePoint.position;
 
             float angle = i * angleStep;
 
             Vector2 dir = new Vector2(
                 Mathf.Cos(angle * Mathf.Deg2Rad),
-                Mathf.Sin(angle * Mathf.Deg2Rad));
+                Mathf.Sin(angle * Mathf.Deg2Rad)
+            );
 
-            fireball.GetComponent<BossProjectile>()
-                .ActivateProjectile(dir);
+            BossProjectile projectile = fireball.GetComponent<BossProjectile>();
+
+            if (projectile == null)
+            {
+                Debug.LogError("BossProjectile component missing!");
+                continue;
+            }
+
+            projectile.ActivateProjectile(dir);
+
+            Debug.Log("After Active: " + fireball.activeSelf);
         }
+
+        Debug.Log("=== SHOOT RADIAL END ===");
     }
 
     private GameObject GetFireball()

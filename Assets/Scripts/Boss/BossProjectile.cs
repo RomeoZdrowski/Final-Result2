@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class BossProjectile : EnemyDamage
 {
     [SerializeField] private float speed = 5f;
@@ -20,14 +21,24 @@ public class BossProjectile : EnemyDamage
 
     public void ActivateProjectile(Vector2 dir)
     {
+        Debug.Log("Projectile Activated");
+
         direction = dir.normalized;
 
         hit = false;
-        lifetime = 0;
+        lifetime = 0f;
+
+        Debug.Log("Before SetActive: " + gameObject.activeSelf);
 
         gameObject.SetActive(true);
 
-        coll.enabled = true;
+        Debug.Log("After SetActive: " + gameObject.activeSelf);
+
+        if (coll == null)
+            coll = GetComponent<BoxCollider2D>();
+
+        if (coll != null)
+            coll.enabled = true;
     }
 
     private void Update()
@@ -39,7 +50,7 @@ public class BossProjectile : EnemyDamage
 
         lifetime += Time.deltaTime;
 
-        if (lifetime > resetTime)
+        if (lifetime >= resetTime)
             gameObject.SetActive(false);
     }
 
@@ -49,12 +60,10 @@ public class BossProjectile : EnemyDamage
 
         base.OnTriggerEnter2D(collision);
 
-        coll.enabled = false;
+        if (coll != null)
+            coll.enabled = false;
 
-        if (anim != null)
-            anim.SetTrigger("explode");
-        else
-            gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void Deactivate()
