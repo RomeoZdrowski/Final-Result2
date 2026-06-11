@@ -147,7 +147,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-    // Вызывается Animation Event из Attack
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Animation Event пїЅпїЅ Attack
     public void ShootRadial()
     {
         Debug.Log("=== SHOOT RADIAL START ===");

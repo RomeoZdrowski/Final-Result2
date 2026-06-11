@@ -1,8 +1,8 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class BossProjectile : EnemyDamage
 {
+    [Header("Movement")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float resetTime = 5f;
 
@@ -11,34 +11,25 @@ public class BossProjectile : EnemyDamage
     private Vector2 direction;
 
     private Animator anim;
-    private BoxCollider2D coll;
+    private Collider2D coll;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<Collider2D>();
     }
 
     public void ActivateProjectile(Vector2 dir)
     {
-        Debug.Log("Projectile Activated");
+        if (coll == null)
+            coll = GetComponent<Collider2D>();
 
         direction = dir.normalized;
-
         hit = false;
         lifetime = 0f;
 
-        Debug.Log("Before SetActive: " + gameObject.activeSelf);
-
         gameObject.SetActive(true);
-
-        Debug.Log("After SetActive: " + gameObject.activeSelf);
-
-        if (coll == null)
-            coll = GetComponent<BoxCollider2D>();
-
-        if (coll != null)
-            coll.enabled = true;
+        coll.enabled = true;
     }
 
     private void Update()
@@ -56,18 +47,37 @@ public class BossProjectile : EnemyDamage
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hit = true;
+        // Игнорируем самого босса и других врагов
+        if (collision.CompareTag("Enemy"))
+            return;
 
-        base.OnTriggerEnter2D(collision);
+        // Игнорируем другие снаряды босса
+        if (collision.GetComponent<BossProjectile>() != null)
+            return;
+
+        // Урон наносим только игроку
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<Health>()?.TakeDamage(damage);
+            DeactivateProjectile();
+            return;
+        }
+
+        // Если хочешь, чтобы снаряд исчезал от стен/земли:
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            DeactivateProjectile();
+            return;
+        }
+    }
+
+    private void DeactivateProjectile()
+    {
+        hit = true;
 
         if (coll != null)
             coll.enabled = false;
 
-        gameObject.SetActive(false);
-    }
-
-    private void Deactivate()
-    {
         gameObject.SetActive(false);
     }
 }
